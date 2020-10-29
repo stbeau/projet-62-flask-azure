@@ -1,28 +1,19 @@
 <html>
 <head>
-    <title>Utilisation du modele : {{ titre_page }}</title>
+  <meta charset="UTF-8">
+  <title>Prédiction des valeurs foncière en {{titre}}</title><!--
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
 </head>
-<body>
 
-
-<div>
-
-    <a href="/index">Home</a>
-    <a href="/form_input">Prediction avec Modele</a>
-</div>
-<hr>
-
-{% with messages = get_flashed_messages() %}
-{% if messages %}
-<ul>
-    {% for message in messages %}
-    <li>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
-{% endwith %}
+<body> 
 
 {% block content %}{% endblock %}
+
+
 </body>
 </html>
 

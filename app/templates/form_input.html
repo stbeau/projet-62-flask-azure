@@ -1,22 +1,55 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Saisie de vos données pour la prédiction</h1>
+
+ 
+ <div>
+	<h1>Informations sur la propriété</h1>
+
+   
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
         <p>
-            {{ form.taille.label }}<br>
-            {{ form.taille(size=32) }}
-        </p>
+            {{ form.type_local.label }}<br>
+            {{ form.type_local(size=32) }}
+			</p>
         <p>
-            {{ form.poids.label }}<br>
-            {{ form.poids(size=10) }}
-        </p>
+            {{ form.nombre_pieces_principales.label }}<br>
+            {{ form.nombre_pieces_principales(size=32) }}
+			</p>
         <p>
-            {{ form.pointure.label }}<br>
-            {{ form.pointure(size=10) }}
-        </p>
+            {{ form.surface_reelle_bati.label }}<br>
+            {{ form.surface_reelle_bati(size=32) }}
+			</p>
+        <p>
+            {{ form.surface_terrain.label }}<br>
+            {{ form.surface_terrain(size=32) }}
+			</p>
+        <p>
+            {{ form.latitude.label }}<br>
+            {{ form.latitude(size=32) }}
+			</p>
+        <p>
+            {{ form.longitude.label }}<br>
+            {{ form.longitude(size=32) }}
+			</p>
 
         <p>{{ form.submit() }}</p>
-    </form>
+    </form>     
+      
+   <br>
+   <br>
+   {{ prediction_text }}
+   
+   {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+   
+  </div>
 {% endblock %}

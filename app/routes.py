@@ -20,6 +20,7 @@ from app.forms import ModelePredictionForm
 from flask import  flash, redirect
 
 @app.route('/', methods=['GET', 'POST'])
+@app.route('/index', methods=['GET', 'POST'])
 def form_input():
     form = ModelePredictionForm()
     if form.validate_on_submit():

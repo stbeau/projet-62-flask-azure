@@ -1,10 +1,13 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField,   SubmitField
+from wtforms import StringField, FloatField, SubmitField
 from wtforms.validators import DataRequired
 
 class ModelePredictionForm(FlaskForm):
-    taille = StringField('Taille', validators=[DataRequired()])
-    poids = StringField('Poids', validators=[DataRequired()])
-    pointure = StringField('Pointure', validators=[DataRequired()])
+    type_local = StringField('Type de local', validators=[DataRequired()])
+    nombre_pieces_principales = FloatField('Nombre de pieces principales', validators=[DataRequired()])
+    surface_reelle_bati = FloatField('Surface réelle bati', validators=[DataRequired()])
+    surface_terrain = FloatField('Surface du terrain', validators=[DataRequired()])
+    latitude = FloatField('Latitude', validators=[DataRequired()])
+    longitude = FloatField('Longitude', validators=[DataRequired()])
 
     submit = SubmitField('Prédire')

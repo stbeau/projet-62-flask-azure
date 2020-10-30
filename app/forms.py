@@ -7,7 +7,7 @@ class ModelePredictionForm(FlaskForm):
     nombre_pieces_principales = FloatField('Nombre de pieces principales', validators=[DataRequired()])
     surface_reelle_bati = FloatField('Surface réelle bati', validators=[DataRequired()])
     surface_terrain = FloatField('Surface du terrain', validators=[DataRequired()])
-    latitude = FloatField('Latitude', validators=[DataRequired()])
+    latitude = FloatField('LAtitude', validators=[DataRequired()])
     longitude = FloatField('Longitude', validators=[DataRequired()])
 
     submit = SubmitField('Prédire')
